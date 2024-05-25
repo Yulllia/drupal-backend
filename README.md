@@ -4,8 +4,8 @@
 This module provides a functionality that will allow admin to add words in the glossary vocabulary. The term can be added through Administrative Panel and add Taxonomy term or using link /admin/structure/glossary/add-term where admin can add title and description to the taxonomy. This module was designed to facilitate building complex pages with consistent design elements and functionality. Implemented also tooltip beheviour with all custom styles, but without ability to change position tooltip on recize.
 
 ## Features
-Easy Integration: The components can be integrated into existing Drupal content types, providing a seamless editing experience.
-Customizable: The paragraph types can be customized or extended to meet specific project requirements.
+Easy Usge: When install the module, the first need create Basic Page with Title and Body, after that need to add Taxonomy Term to Vocabulary and see highlighted word on the content type.
+Customizable:  The glossary terms can be added or dele to meet specific project requirements.
 
 ## Requirements
 Drupal 9.5.x
