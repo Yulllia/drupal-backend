@@ -1,0 +1,4 @@
+services:
+  glossary_module.service:
+    class: Drupal\glossary_module\GlossaryModuleService
+    arguments: ['@entity_type.manager']

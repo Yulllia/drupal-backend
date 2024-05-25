@@ -1,0 +1,84 @@
+.title {
+  font-family: "Roboto Slab", serif;
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 24px;
+  text-align: left;
+}
+
+.body-content {
+  font-family: Helvetica;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+}
+
+.glossary-term {
+  border-bottom: 1px solid #0d7978;
+  background-color: rgba(13, 121, 120, 0.1);
+  cursor: pointer;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tooltip .tooltiptext {
+  visibility: hidden;
+  font-family: "Roboto Slab", serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  width: 290px;
+  background-color: #0d7978;
+  color: #fff;
+  text-align: left;
+  border-radius: 8px;
+  padding: 16px 27px 16px 24px;
+  position: absolute;
+  z-index: 1;
+  bottom: calc(100% + 13px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.tooltip .tooltiptext.bottom {
+  bottom: unset;
+  top: calc(100% + 13px);
+}
+
+.tooltip .tooltiptext.bottom::after {
+  bottom: 100%;
+  top: unset;
+  transform: rotate(180deg);
+}
+
+.tooltip .tooltiptext::after {
+  content: " ";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -13px;
+  border-width: 8px 12px;
+  border-style: solid;
+  border-color: #0d7978 transparent transparent transparent;
+}
+
+.glossary-term:hover .tooltiptext {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltip .tooltiptext a {
+  color: #fff;
+  font-weight: 500;
+  line-height: 16px;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.tooltiptext p {
+  margin: 0;
+}

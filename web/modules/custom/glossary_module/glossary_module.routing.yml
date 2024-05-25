@@ -1,0 +1,16 @@
+glossary_module.add-term:
+  path: '/admin/structure/glossary/add-term'
+  defaults:
+    _form: '\Drupal\glossary_module\Form\AddTermForm'
+    _title: 'Add Glossary Term'
+  requirements:
+    _permission: 'access content'
+
+
+glossary_module.render:
+  path: '/glossary'
+  defaults:
+    _controller: '\Drupal\glossary_module\Controller\GlossaryController::render'
+    _title: 'Glossary'
+  requirements:
+    _permission: 'access content'

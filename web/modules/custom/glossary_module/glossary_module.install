@@ -1,0 +1,24 @@
+<?php
+use Drupal\taxonomy\Entity\Vocabulary;
+use Drupal\field\Entity\FieldStorageConfig;
+use Drupal\field\Entity\FieldConfig;
+
+/**
+ * Implements hook_install().
+ */
+function glossary_module_install() {
+  $vocId = "glossary_terms";
+  $vocName = "Glossary Terms";
+  $vocDescription = "Used for glossary terms.";
+
+  $vocabulary = Vocabulary::load($vocId);
+  if (!$vocabulary) {
+    $vocabulary = Vocabulary::create([
+      'vid' => $vocId,
+      'description' => $vocDescription,
+      'name' => $vocName,
+    ]);
+    $vocabulary->save();
+  }
+}
+?>
