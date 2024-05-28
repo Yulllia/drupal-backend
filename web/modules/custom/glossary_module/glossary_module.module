@@ -16,4 +16,13 @@ function glossary_module_theme($existing, $type, $theme, $path) {
   ];
 }
 
+function glossary_module_page_attachments_alter(array &$attachments)
+{
+  $route_uri = \Drupal::request()->getRequestUri();
+
+  if(str_starts_with($route_uri, '/glossary_module/')) {
+    $attachments['#attached']['library'][] = 'glossary_module/glossary_style';
+  }
+}
+
 ?>

@@ -20,5 +20,39 @@ function glossary_module_install() {
     ]);
     $vocabulary->save();
   }
+  // Create the field storage if it doesn't exist.
+  if (!FieldStorageConfig::loadByName('taxonomy_term', 'field_glossary_description')) {
+    FieldStorageConfig::create([
+      'field_name' => 'field_glossary_description',
+      'entity_type' => 'taxonomy_term',
+      'type' => 'text_long',
+      'settings' => [],
+      'module' => 'text',
+      'cardinality' => 1,
+      'translatable' => TRUE,
+    ])->save();
+  }
+
+  // Create the field instance for the vocabulary.
+  if (!FieldConfig::loadByName('taxonomy_term', 'glossary_terms', 'field_glossary_description')) {
+    FieldConfig::create([
+      'field_storage' => FieldStorageConfig::loadByName('taxonomy_term', 'field_glossary_description'),
+      'bundle' => 'glossary_terms',
+      'label' => t('Glossary Description'),
+      'description' => t('A detailed description of the glossary term.'),
+      'required' => FALSE,
+      'settings' => [
+        'text_processing' => 1,
+      ],
+      'widget' => [
+        'type' => 'text_textarea',
+        'weight' => 0,
+        'settings' => [
+          'rows' => 5,
+        ],
+      ],
+    ])->save();
+  }
+
 }
 ?>
